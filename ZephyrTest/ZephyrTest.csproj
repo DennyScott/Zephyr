@@ -4,14 +4,13 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C03B8B82-E90F-4887-894F-BD24A871AB8D}</ProjectGuid>
+    <ProjectGuid>{1F363D4D-BA1E-49A0-A976-16E85FA4BB2A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Zephyr</RootNamespace>
-    <AssemblyName>Zephyr</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <RootNamespace>ZephyrTest</RootNamespace>
+    <AssemblyName>ZephyrTest</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile>Unity Full v3.5</TargetFrameworkProfile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -31,6 +30,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="nunit.framework, Version=3.4.1.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.3.4.1\lib\net45\nunit.framework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -42,40 +45,30 @@
     <Reference Include="UnityEngine">
       <HintPath>..\..\..\..\..\Program Files\Unity\Editor\Data\Managed\UnityEngine.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.UI">
-      <HintPath>..\..\..\..\..\Program Files\Unity\Editor\Data\UnityExtensions\Unity\GUISystem\UnityEngine.UI.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdvancedMonoBehaviour\AdvancedMonoBehaviour.cs" />
-    <Compile Include="AdvancedMonoBehaviour\GameRunner.cs" />
-    <Compile Include="AdvancedMonoBehaviour\IStartable.cs" />
-    <Compile Include="AdvancedMonoBehaviour\IUpdateable.cs" />
     <Compile Include="Class1.cs" />
-    <Compile Include="EventSystem\Core\EventManager.cs" />
-    <Compile Include="EventSystem\Core\EventManagerModel.cs" />
-    <Compile Include="EventSystem\Core\GameEvent.cs" />
-    <Compile Include="Extensions\DelegateExtensions.cs" />
-    <Compile Include="Extensions\ImageExtensions.cs" />
-    <Compile Include="Extensions\ListExtensions.cs" />
-    <Compile Include="Extensions\MaterialExtensions.cs" />
-    <Compile Include="Extensions\MonobehaviourExtensions.cs" />
-    <Compile Include="FSM\Core\Fsm.cs" />
-    <Compile Include="FSM\Core\FsmState.cs" />
-    <Compile Include="FSM\Core\FsmTransition.cs" />
-    <Compile Include="FSM\Core\IFsm.cs" />
-    <Compile Include="FSM\Core\IState.cs" />
-    <Compile Include="FSM\Core\IStateContainer.cs" />
-    <Compile Include="FSM\Core\ITransition.cs" />
-    <Compile Include="FSM\Core\ITransitionContianer.cs" />
-    <Compile Include="FSM\Core\StateContainer.cs" />
-    <Compile Include="FSM\Core\TransitionContainer.cs" />
+    <Compile Include="FSM\Test\Editor\Core\FsmStateTests.cs" />
+    <Compile Include="FSM\Test\Editor\Core\FsmTest.cs" />
+    <Compile Include="FSM\Test\Editor\Core\FsmTransitionTests.cs" />
+    <Compile Include="FSM\Test\Editor\Core\StateContainerTest.cs" />
+    <Compile Include="FSM\Test\Editor\Core\TransitionContainerTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Singletons\Demo\MySingletonComponent.cs" />
-    <Compile Include="Singletons\SimpleSingleton.cs" />
-    <Compile Include="Singletons\SingletonAsComponent.cs" />
+    <Compile Include="EventSystem\Test\Editor\Core\EventManagerModelTest.cs" />
+    <Compile Include="EventSystem\Test\Editor\Core\GameEventTest.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Zephyr\Zephyr.csproj">
+      <Project>{c03b8b82-e90f-4887-894f-bd24a871ab8d}</Project>
+      <Name>Zephyr</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
