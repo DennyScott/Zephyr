@@ -1,4 +1,4 @@
-﻿using Zephyr.MonoBehaviours;
+﻿using Zephyr.MonoBehaviourAdditions;
 
 namespace Zephyr.EventSystem.Core
 {

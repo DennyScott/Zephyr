@@ -1,6 +1,4 @@
-﻿#if UNIT_TEST
-using System;
-#else
+﻿#if !UNIT_TEST
 using UnityEngine;
 #endif
 using System.Collections.Generic;
@@ -370,17 +368,17 @@ namespace Zephyr.EventSystem.Core
         {
             public static void Log(string s)
             {
-                Console.WriteLine(s);
+                System.Console.WriteLine(s);
             }
 
             public static void LogWarning(string s)
             {
-                Console.WriteLine(s);
+                System.Console.WriteLine(s);
             }
 
             public static void LogError(string s)
             {
-                Console.WriteLine(s);
+                System.Console.WriteLine(s);
             }
 
             public static bool isDebugBuild = true;
