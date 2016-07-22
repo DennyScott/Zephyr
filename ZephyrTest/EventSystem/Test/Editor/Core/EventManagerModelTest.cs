@@ -10,15 +10,26 @@ namespace Zephyr.EventSystem.Editor.Test.Core
         private EventManagerModel _manager;
 
         [SetUp]
-        public void Init() { _manager = new EventManagerModel(); }
+        public void Init()
+        {
+            _manager = new EventManagerModel();
+        }
 
         [Test]
-        public void IsQueueInstantiatedEmpty() { Assert.AreEqual(0, _manager.QueueSize()); }
+        public void IsQueueInstantiatedEmpty()
+        {
+            Assert.AreEqual(0, _manager.QueueSize());
+        }
 
         [Test]
-        public void IsDelegatesEmptyOnStart() { Assert.IsTrue(_manager.HasListeners()); }
+        public void IsDelegatesEmptyOnStart()
+        {
+            Assert.IsTrue(_manager.HasListeners());
+        }
 
-        public void OnCall(GameEvent evt) { }
+        public void OnCall(GameEvent evt)
+        {
+        }
 
         [Test]
         public void DoesAddListenerAttachListener()
@@ -146,7 +157,6 @@ namespace Zephyr.EventSystem.Editor.Test.Core
 
             //Assert
             Assert.IsTrue(_manager.HasListener<GameEvent>(OnCall));
-
         }
 
         [Test]

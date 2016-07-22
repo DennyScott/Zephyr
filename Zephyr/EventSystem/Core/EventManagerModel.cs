@@ -1,6 +1,11 @@
-﻿using System.Collections.Generic;
-using System.Collections;
+﻿#if UNIT_TEST
+using System;
+#else
 using UnityEngine;
+#endif
+using System.Collections.Generic;
+using System.Collections;
+
 
 namespace Zephyr.EventSystem.Core
 {
@@ -90,7 +95,7 @@ namespace Zephyr.EventSystem.Core
             if (internalDelegate == null)
             {
                 if (Debug.isDebugBuild)
-                    Debug.LogWarning("Deletegate of type " + typeof (T) + "was not found when removing a listener.");
+                    Debug.LogWarning("Deletegate of type " + typeof(T) + "was not found when removing a listener.");
                 return;
             }
             RemoveOnceLookUpListener(internalDelegate);
@@ -252,15 +257,15 @@ namespace Zephyr.EventSystem.Core
             EventDelegate tempDel;
 
             //Find if the delegate with the k of Type T exists...
-            if (_delegates.TryGetValue(typeof (T), out tempDel))
+            if (_delegates.TryGetValue(typeof(T), out tempDel))
             {
                 //...if exists, add the internal delegate to delegate stored
-                _delegates[typeof (T)] = tempDel += internalDelegate;
+                _delegates[typeof(T)] = tempDel += internalDelegate;
             }
             else
             {
                 //...does not exist, add the interal deleagate as the value
-                _delegates[typeof (T)] = internalDelegate;
+                _delegates[typeof(T)] = internalDelegate;
             }
 
             return internalDelegate;
@@ -325,16 +330,16 @@ namespace Zephyr.EventSystem.Core
         {
             EventDelegate tempDel;
             //If there is no delegates with Type t, return null.
-            if (!_delegates.TryGetValue(typeof (T), out tempDel)) return null;
+            if (!_delegates.TryGetValue(typeof(T), out tempDel)) return null;
 
             //DelegateList is found, remove delegate from list.
             if (internalDelegate != null) tempDel -= internalDelegate;
 
             //If there no delegates left in the list, remove list from dictionary
             if (tempDel == null)
-                _delegates.Remove(typeof (T));
+                _delegates.Remove(typeof(T));
             else
-                _delegates[typeof (T)] = tempDel;
+                _delegates[typeof(T)] = tempDel;
 
             return tempDel;
         }
@@ -354,6 +359,42 @@ namespace Zephyr.EventSystem.Core
 
             return internalDelegate;
         }
+
+        #endregion
+
+        #region Unit Testing Mocks
+
+#if UNIT_TEST
+
+        public class Debug
+        {
+            public static void Log(string s)
+            {
+                Console.WriteLine(s);
+            }
+
+            public static void LogWarning(string s)
+            {
+                Console.WriteLine(s);
+            }
+
+            public static void LogError(string s)
+            {
+                Console.WriteLine(s);
+            }
+
+            public static bool isDebugBuild = true;
+        }
+
+        public class Time
+        {
+            public static float deltaTime = 0.1f;
+        }
+
+        public class MonoBehaviour
+        {
+        }
+#endif
 
         #endregion
     }
