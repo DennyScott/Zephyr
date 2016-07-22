@@ -1,16 +1,15 @@
 ﻿using UnityEngine;
 
-namespace Zephyr.MonoBehaviours
+namespace Zephyr.MonoBehaviourAdditions
 {
-    public class AdvancedMonoBehaviour : MonoBehaviour, IUpdateable, IStartable
+    public class AdvancedMonoBehaviour : MonoBehaviour, IUpdateable
     {
         /// <summary>
         /// Runs on Start for all objects.
         /// </summary>
-        private void Start()
+        private void Awake()
         {
-            OnStart();
-            GameRunner.Instance.RegisterUpdateableObject(this);
+            AdvanceMonoBehvaiourRunner.Instance.RegisterUpdateableObject(this);
         }
 
         /// <summary>
@@ -18,8 +17,8 @@ namespace Zephyr.MonoBehaviours
         /// </summary>
         protected virtual void OnDestroy()
         {
-            if (GameRunner.IsAlive)
-                GameRunner.Instance.UnregisterUpdateableObject(this);
+            if (AdvanceMonoBehvaiourRunner.IsAlive)
+                AdvanceMonoBehvaiourRunner.Instance.UnregisterUpdateableObject(this);
         }
 
         /// <summary>
@@ -32,5 +31,10 @@ namespace Zephyr.MonoBehaviours
         /// Must be used instead of Start in an AdvancedMonobehaviour.  Acts in the place of start.
         /// </summary>
         public virtual void OnStart() { }
+
+        /// <summary>
+        /// Must be used instead of Awake in an AdvancedMonobehaviour.  Acts in the place of start.
+        /// </summary>
+        public virtual void OnAwake() { }
     }
 }

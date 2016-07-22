@@ -47,10 +47,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdvancedMonoBehaviour\AdvancedMonoBehaviour.cs" />
-    <Compile Include="AdvancedMonoBehaviour\GameRunner.cs" />
-    <Compile Include="AdvancedMonoBehaviour\IStartable.cs" />
-    <Compile Include="AdvancedMonoBehaviour\IUpdateable.cs" />
+    <Compile Include="MonoBehaviourAdditions\AdvancedMonoBehaviour.cs" />
+    <Compile Include="MonoBehaviourAdditions\AdvanceMonobehvaiourRunner.cs" />
+    <Compile Include="MonoBehaviourAdditions\IUpdateable.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="EventSystem\Core\EventManager.cs" />
     <Compile Include="EventSystem\Core\EventManagerModel.cs" />

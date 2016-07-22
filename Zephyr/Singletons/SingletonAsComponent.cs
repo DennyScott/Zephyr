@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using Zephyr.MonoBehaviours;
+using Zephyr.MonoBehaviourAdditions;
 
 namespace Zephyr.Singletons
 {
