@@ -9,7 +9,7 @@ namespace Zephyr.MonoBehaviourAdditions
         /// </summary>
         private void Awake()
         {
-            AdvanceMonoBehvaiourRunner.Instance.RegisterUpdateableObject(this);
+            AdvancedMonoBehvaiourRunner.Instance.RegisterUpdateableObject(this);
         }
 
         /// <summary>
@@ -17,8 +17,8 @@ namespace Zephyr.MonoBehaviourAdditions
         /// </summary>
         protected virtual void OnDestroy()
         {
-            if (AdvanceMonoBehvaiourRunner.IsAlive)
-                AdvanceMonoBehvaiourRunner.Instance.UnregisterUpdateableObject(this);
+            if (AdvancedMonoBehvaiourRunner.IsAlive)
+                AdvancedMonoBehvaiourRunner.Instance.UnregisterUpdateableObject(this);
         }
 
         /// <summary>

@@ -8,7 +8,7 @@ namespace Zephyr.MonoBehaviourAdditions
     /// In charge of running the update loop.  This update loop is more efficient then the unity built update loop.  Later this class should be extended to include high priority update items adnd such to cusomize the level of priority
     /// items in the update loop have.
     /// </summary>
-    public class AdvanceMonoBehvaiourRunner : SingletonAsComponent<AdvanceMonoBehvaiourRunner>
+    public class AdvancedMonoBehvaiourRunner : SingletonAsComponent<AdvancedMonoBehvaiourRunner>
     {
         #region Constants
 
@@ -28,9 +28,9 @@ namespace Zephyr.MonoBehaviourAdditions
 
         #region Properties
 
-        public static AdvanceMonoBehvaiourRunner Instance
+        public static AdvancedMonoBehvaiourRunner Instance
         {
-            get { return (AdvanceMonoBehvaiourRunner) _Instance; }
+            get { return (AdvancedMonoBehvaiourRunner) _Instance; }
             set { _Instance = value; }
         }
 
