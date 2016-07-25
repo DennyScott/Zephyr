@@ -1,4 +1,4 @@
-﻿using Zephyr.MonoBehaviourAdditions;
+﻿using Zephyr.CustomMonoBehaviours;
 
 namespace Zephyr.EventSystem.Core
 {
@@ -24,7 +24,7 @@ namespace Zephyr.EventSystem.Core
             _instance = null;
         }
 
-        private void Update()
+        public override void OnUpdate(float delta)
         {
             Instance.ProcessEvents();
         }

@@ -47,10 +47,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MonoBehaviourAdditions\AdvancedMonoBehaviour.cs" />
-    <Compile Include="MonoBehaviourAdditions\AdvanceMonobehvaiourRunner.cs" />
-    <Compile Include="MonoBehaviourAdditions\IUpdateable.cs" />
+    <Compile Include="CustomMonoBehaviours\AdvancedMonoBehaviour.cs" />
+    <Compile Include="CustomMonoBehaviours\AdvancedMonoBehvaiourRunner.cs" />
+    <Compile Include="CustomMonoBehaviours\IUpdateable.cs" />
     <Compile Include="Class1.cs" />
+    <Compile Include="CustomMonoBehaviours\UpdateContainers\ArrayUpdateContainer.cs" />
+    <Compile Include="CustomMonoBehaviours\UpdateContainers\IUpdateContainer.cs" />
+    <Compile Include="CustomMonoBehaviours\UpdateContainers\ListUpdateContainer.cs" />
     <Compile Include="EventSystem\Core\EventManager.cs" />
     <Compile Include="EventSystem\Core\EventManagerModel.cs" />
     <Compile Include="EventSystem\Core\GameEvent.cs" />

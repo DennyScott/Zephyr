@@ -1,4 +1,4 @@
-﻿namespace Zephyr.MonoBehaviourAdditions {
+﻿namespace Zephyr.CustomMonoBehaviours {
     public interface IUpdateable
     {
         void OnUpdate(float delta);

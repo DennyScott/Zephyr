@@ -1,13 +1,13 @@
 ﻿using UnityEngine;
 
-namespace Zephyr.MonoBehaviourAdditions
+namespace Zephyr.CustomMonoBehaviours
 {
     public class AdvancedMonoBehaviour : MonoBehaviour, IUpdateable
     {
         /// <summary>
         /// Runs on Start for all objects.
         /// </summary>
-        private void Awake()
+        protected void Awake()
         {
             AdvancedMonoBehvaiourRunner.Instance.RegisterUpdateableObject(this);
         }
