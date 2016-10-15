@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using Zephyr.MonoBehaviourAdditions;
 
 
 namespace Zephyr.Singletons
@@ -8,7 +7,7 @@ namespace Zephyr.Singletons
     /// A simple singleton.  This singleton will not exist through scenes, and will not create itself if it does not exist.
     /// </summary>
     /// <typeparam name="T">The type of singleton</typeparam>
-    public class SimpleSingleton<T> : AdvancedMonoBehaviour where T : MonoBehaviour
+    public class SimpleSingleton<T> : MonoBehaviour where T : MonoBehaviour
     {
         protected static T InnerInstance;
 

@@ -47,7 +47,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="FSM\Test\Editor\Core\FsmStateTests.cs" />
     <Compile Include="FSM\Test\Editor\Core\FsmTest.cs" />
     <Compile Include="FSM\Test\Editor\Core\FsmTransitionTests.cs" />

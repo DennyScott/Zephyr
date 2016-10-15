@@ -47,10 +47,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MonoBehaviourAdditions\AdvancedMonoBehaviour.cs" />
-    <Compile Include="MonoBehaviourAdditions\AdvanceMonobehvaiourRunner.cs" />
-    <Compile Include="MonoBehaviourAdditions\IUpdateable.cs" />
-    <Compile Include="Class1.cs" />
     <Compile Include="EventSystem\Core\EventManager.cs" />
     <Compile Include="EventSystem\Core\EventManagerModel.cs" />
     <Compile Include="EventSystem\Core\GameEvent.cs" />

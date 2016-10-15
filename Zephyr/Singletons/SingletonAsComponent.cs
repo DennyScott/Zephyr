@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using Zephyr.MonoBehaviourAdditions;
 
 namespace Zephyr.Singletons
 {
@@ -8,7 +7,7 @@ namespace Zephyr.Singletons
     /// Lastly, if it does not exist, it will create a new component that will not be destroyed on loads.  This is useful for a Game Runner.
     /// </summary>
     /// <typeparam name="T">The type of component to be a singleton</typeparam>
-    public class SingletonAsComponent<T> : AdvancedMonoBehaviour where T : SingletonAsComponent<T>
+    public class SingletonAsComponent<T> : MonoBehaviour where T : SingletonAsComponent<T>
     {
         private bool _isAlive = true;
         private static T _instance;
